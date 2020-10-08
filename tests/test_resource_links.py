@@ -34,6 +34,8 @@ class TestResourceLinks:
         ]
 
     def test_values_must_be_a_str_or_link_href_object(self):
+
+        ThingWithLinks(links={"related": None})
         ThingWithLinks(links={"walter": ""})
         ThingWithLinks(
             links={
@@ -67,3 +69,7 @@ class TestResourceLinks:
                 "type": "value_error.missing",
             },
         ]
+
+    def test_related_resource_links_can_be_empty(self):
+
+        ThingWithLinks(links={"related": None})
